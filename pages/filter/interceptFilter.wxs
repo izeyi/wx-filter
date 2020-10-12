@@ -1,0 +1,27 @@
+/**
+ * 只显示前n位和后m位，其他显示星号
+ */
+function interceptFilter(str, fontStartLen, fontEndLen) {
+  /**
+   * str:要隐藏的变量
+   * fontStartLen：前面需要保留几位
+   * fontEndLen：后面需要保留几位
+   */
+  if (str == "" || str == null || str == undefined) {
+    str = "";
+  }
+  if (str.length < 9) {
+    return str;
+  } else {
+    var len = str.length - fontStartLen - fontEndLen;
+    var xing = '';
+    for (var i = 0; i < len; i++) {
+      xing += "*";
+    }
+    return str.substring(0, fontStartLen) + xing + str.substring(str.length - fontEndLen);
+  }
+
+}
+module.exports = {
+  interceptFilter: interceptFilter
+}

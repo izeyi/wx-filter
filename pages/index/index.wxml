@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<!-- 添加过滤器-start -->
+<wxs src="../filter/interceptFilter.wxs" module="filterTools" />
+<!-- 添加过滤器-end -->
+<view class="container">
+    这是一串数字：{{filterTools.interceptFilter("325432555465756765757",4,4)}}
+</view>
